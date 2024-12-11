@@ -1,0 +1,252 @@
+*{
+margin: 0;
+padding:0;
+box-sizing: border-box;
+scroll-behavior: smooth;
+z-index: 1;
+overflow-x: hidden;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+.navbar{
+width:fit-content;
+padding:3px;
+background-color: #e8e5e499;
+border-radius: 20px;
+position: fixed;
+z-index: 999;
+}
+
+.btn{
+padding:10px 20px;
+border-radius: 20px;
+border: none;
+background-color:transparent;
+cursor: pointer;
+font-weight: 700;
+}
+
+.clicked{
+    background-color:#ffffff;
+}
+
+h1.title{
+    font-size: 5em;
+    font-weight: 600;
+    text-align: center;
+    padding: 50px 300px;
+    opacity: 0.5;
+    transition: 0.5s ease ;
+    animation: move 2s forwards ease;
+}
+
+@keyframes move {
+    0%{
+        opacity: 0;
+        transform: translatex(0.2em);    
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0);   
+    }
+}
+
+.scroll{
+    
+    
+    margin-top: 100px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 100px;
+    transition: 0.5s ease;
+    animation: move 2s forwards ease;
+
+}
+
+.scroll .icon{
+     
+}
+
+.scroll .text{
+    font-size: 1.5em;
+}
+
+
+.projects{
+    display: grid;
+    grid-template-columns:minmax(300px, 650px) minmax(300px, 650px) ;
+    grid-auto-rows: 500px;
+    gap: 20px;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.project{
+    height: auto;
+    width: 100%;
+ 
+  border-radius: 15px;
+  position: relative;
+ overflow:hidden;
+ transition: 1s ease;
+}
+
+
+.project .image{
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+.project .image:hover{
+    filter: blur(5px);
+
+}
+
+
+
+
+.project .content{
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display:flex;
+    justify-content: space-between;
+    padding:20px 20px;
+    z-index: 2;
+    pointer-events: none;
+   
+
+} 
+
+
+.project .content *{
+    pointer-events: all;
+    
+}
+
+.project .content .icon{
+color: black;
+background-color: #ffffff;
+height: fit-content;
+padding: 15px;
+border-radius: 50%;
+transition:0.3s ease-in ;
+transform: translateX(-1em) translateY(1em);
+opacity: 0;
+}
+
+.project .content .title{
+
+font-size: 1.8em;
+color:#e8e5e480;
+opacity: 0;
+}
+
+.project .content .hovered{
+opacity: 1;
+transform: translateX(0) translateY(0);
+}
+
+
+
+.projects .left{
+    transform: translateX(-10em);
+    opacity: 0;
+}
+
+.projects .right{
+    transform: translateX(10em);
+    opacity: 0;
+}
+
+.projects .project.animated{
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+}
+
+
+
+.contact-title{
+    margin: 200px 0;
+    text-align: center;
+font-size: 2.5em;
+}
+
+.contact-title a{
+    display: inline-block;
+    color:#7f7f7f;
+cursor: pointer;
+text-decoration: none;
+}
+
+.contact-title a:hover{
+    color: #75757599;
+
+}
+
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 20px;
+}
+
+.footer p,.footer .left .icon{
+    display: inline-block;
+    margin-left: 10px;
+}
+
+.footer .right a{
+    text-decoration: none;
+    margin-right: 10px;
+    
+    cursor: pointer;
+    color: black;
+}
+
+.footer .right a:hover{
+    color: #10101099;
+}
+
+
+
+
+
+@media(max-width:1000px) {
+    body{
+        font-size:10px
+    }
+    h1.title{
+        padding: 0;
+        padding-top: 50px;
+    }
+}
+@media (max-width: 768px) {
+    body{
+        font-size: 10px;
+
+    }
+
+    h1.title{
+        padding: 0 10px;
+        padding-top: 50px;
+    }
+
+    .projects{
+        grid-template-columns: minmax(100px,600px);
+        grid-auto-rows: 400px ;
+    }
+    
+}
